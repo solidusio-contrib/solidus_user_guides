@@ -1,0 +1,5 @@
+<!--
+  insert_after '#wrapper'
+-->
+
+<%= render partial: 'solidus_user_guides/user_guides' %>

@@ -1,0 +1,5 @@
+bump:
+  recurse: false
+  file: 'lib/solidus_user_guides/version.rb'
+  message: Bump SolidusUserGuides to %{version}
+  tag: true
