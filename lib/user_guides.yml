@@ -34,34 +34,229 @@ orders:
 
     You can add, remove, or adjust the items in the cart from here. This will adjust the shipments accordingly on the shipments page. Keep in mind - if the customer has already paid, adjusting the items in their cart will likely leave an unpaid balance on the order.
 products:
-  index: TODO A list of all products. From here you can delete, create, edit, or search for products.
-  edit: TODO product edit
+  index: |+
+    This is the products index page.
+
+    <b>Searching</b>
+
+    You can search your products by Sku and Name. There's also a checkbox where you can specify whether you want to see items that have been deleted.
+
+    <b>Product Management</b>
+
+    You can create a new product by clicking the "New Product" button on the top right, or use one of the admin buttons to the right of the product list for individual product control. You're able to edit, clone, or delete products.
+
+    <b>Cloning</b>
+
+    Cloning creates a copy of a product. This is useful if you want to make a product template, then create products from that template. 
+
+    <b>Deleting</b>
+
+    In Solidus, when you delete a product, it isn't actually removed from the database - instead, it's marked as deleted, and removed from frontend and backend views. This is because removing the product entirely could result in issues from customers that have previously ordered the product.
+  edit: |+
+    This is the product edit page.
+
+    From here, you're able to specify various points of information about the product, such as the price or description. Most of the data is self explanatory, but here's a rundown of a few of the fields:
+
+    <b>Master Price</b>
+
+    This is the master price of the product, but may not be the price that the customer sees. If there are variants, the customer will see the price specified for that variant instead. You can also specify different prices for different locales in the "Price" tab.
+    <b>Available On</b>
+
+    This is the date that the product will become available. The product will not be accessible on the frontend until the available_on date.
+
+    <b>Option Types</b>
+
+    Before you create a variant, you'll need to specify at least one option type. This will be what makes your variants different. For instance, for clothing, you might have an option type of Size or Color.
+  new: |+
+    This is the new product page.
+
+    From here you can create a product and set its information. Most of the data is self explanatory, but here's a rundown of a few of the fields:
+
+    <b>Master Price</b>
+
+    This is the master price of the product, but may not be the price that the customer sees. If there are variants, the customer will see the price specified for that variant instead. You can also specify different prices for different locales in the "Price" tab.
+    <b>Available On</b>
+
+    This is the date that the product will become available. The product will not be accessible on the frontend until the available_on date.
+
+    <b>Option Types</b>
+
+    Before you create a variant, you'll need to specify at least one option type. This will be what makes your variants different. For instance, for clothing, you might have an option type of Size or Color.
+
+    <b>Slug</b>
+
+    The product slug (the url that you use to access the product on the frontend) will be set automatically on product creation. Solidus automatically created human readable slugs for products based on the products name.
 images:
-  index: TODO product image page
-  edit: TODO product edit page
+  index: |+
+    This is the image index page.
+
+    Here you can see the images that you've uploaded for this product, and change the order that they appear in. You can also upload new images by dragging and dropping them into the upload box.
+  edit: |+
+    This is the image edit page.
+
+    From here you can edit specifics about the image, such as what variant it is attached to, or the alt text use for the image.
 variants:
-  index: TODO
-  edit: TODO
-  new: TODO
+  index: |+
+    This is the variants index page.
+
+    From here you can see a list of variants associated with the product, and create new variants.
+
+    <b>Variant Creation</b>
+
+    In order to create a variant, you'll first need to define at least one Option Type for the product. This can be done on the "Product Details" page.
+
+    <b>Admin Controls</b>
+
+    You can also use the buttons on the right to edit or delete individual variants. Additionally, there are handles on the left which control the variants position - the user will see the variants on the frontend in the same order that you specify on this page.
+  edit: |+
+    This is the variants edit page.
+
+    From here, you're able to set the variants information, such as price or sku.
+
+    <b>Track Inventory</b>
+
+    The Track Inventory button, when unchecked, will ignore the current inventory level, and will not adjust inventory when a shipment is created. This might be useful if this is a digital product, for instance.
+  new: |+
+    This is the new variant page.
+
+    From here, you're able to create a variant and set its information, such as price or sku.
+
+    <b>Track Inventory</b>
+
+    The Track Inventory button, when unchecked, will ignore the current inventory level, and will not adjust inventory when a shipment is created. This might be useful if this is a digital product, for instance.
 prices:
-  index: TODO
-  edit: TODO
-  new: TODO
+  index: |+
+    This is the price index page.
+
+    Here you can see a list of prices for this product by country. You can edit or delete existing prices, or create a new price with the "New Price" button on the top right of the page. You can also search for a particular price with several selectors at the top of the page.
+
+    Typically, people use this page to create prices for different countries. If you're a US based customer and you want to sell internationally, you may want to display a price in Euros to customers from Italy, for instance.
+  edit: |+
+    This is the price edit page.
+
+    Here you can edit the data for any given price. 
+  new: |+
+    This is the new price page.
+
+    Here you can create a new price for your product or variant. You can select a variant, a country, and set the price that you want to display.
 product_properties:
-  index: TODO
+  index: |+
+    This is the product properties index page.
+
+    Here you can see the products properties, and edit, delete, or move them.
+
+    In the vanilla Solidus frontend, these properties are displayed on the product page. The order that is specified on this page is the order that the customer will see them in.
+
+    However, some people like to use product properties to store admin-side information about the product.
 stock_items:
-  index: TODO
+  index: |+
+    This is the stock items index page.
+
+    From here you can see the stock on hand for any product or variant. If you're visiting this page from a product page, then you'll only see the stock items for that particular product. You can filter the stock items you see by specifying a stock location or a variant SKU in the search fields.
+
+    <b>Backorderable</b>
+
+    If this is set to true, then the product is considered backorderable - that is, you'll be able to sell more than you have on hand, and the shipments that contain the stock you don't have will be considered "backorded", letting the customer know that this shipment will take some time to fulfill.
+
+    <b>Modify Stock</b>
+
+    If you need to manually change the stock of an item, you can use the "Modify" field on this page. Simply enter the amount that you'd like to change the stock by and approve the change.
 option_types:
-  index: TODO
+  index: |+
+    This is the option types index page.
+
+    From here you can edit or delete existing option types, create new ones, or change the order of appearance.
+
+    <b>Option Types</b>
+
+    An option type is what Solidus uses to create variants from. An example for option types might be "Size" or "Color" for a t-shirt.
+
+    <b>Name/Presentation</b>
+
+    An option types name is used internally, while its presentation is what is displayed to the customer.
+  edit: |+
+    This is the option types edit page.
+
+    From here you can change the name or presentation for any option type.
+
+    <b>Option Types</b>
+
+    An option type is what Solidus uses to create variants from. An example for option types might be "Size" or "Color" for a t-shirt.
+
+    <b>Name/Presentation</b>
+
+    An option types name is used internally, while its presentation is what is displayed to the customer.
+
+    <b>Option Values</b>
+
+    This is where you'll store the available values for the option type - for example, if your option type is "Size", then your option values might be "Small", "Medium", or "Large".
 properties:
-  index: TODO
-  edit: TODO
+  index: |+
+    This is the property type index page.
+
+    Here you can specify the property names for the product properties. For example, you can have property names like "Brand", "Make/Model", or "Material".
+
+    You can edit, delete, or create new property types from this page. You can also search for properties, and reorder them. The customers will see these properties in the order that you specify on this page.
+
+    <b>Name/Presentation</b>
+
+    An option types name is used internally, while its presentation is what is displayed to the customer.
+  edit: |+
+    This is the property type edit page.
+
+    Here you can edit a property type.
+
+    <b>Name/Presentation</b>
+
+    An option types name is used internally, while its presentation is what is displayed to the customer.
 taxonomies:
-  index: TODO
-  new: TODO
-  edit: TODO
+  index: |+
+    This is the taxonomies index page.
+
+    Here you can see your top-level taxonomies. In Solidus, taxonomies are the container for all of your taxons. These should be top level items like "clothing" or "appliances". You can drill down to the specifics in the contained taxons.
+
+    You can edit and delete existing taxonomies, or create new ones. You can also reorder the taxonomies - which will change the order in which they appear on the frontend.
+
+    <b>Taxonomies/Taxons</b>
+
+    Taxonomies contain taxons, but when you create a taxonomy, a taxon with the same name is also created. This taxon acts as the parent taxon for any other taxon you want to create in the taxonomy.
+  new: |+
+    This is the new taxonomy page.
+
+    From here, you can create a new taxonomy. You only need a name to do this. Keep in mind that creating a taxonomy will also create a taxon with the same name, that serves as the parent taxon for the entire taxonomy.
+  edit: |+
+    This is the taxonomy edit page.
+
+    Here you can edit the taxonomies name, but you can also see the contained taxons, and add new taxons to the taxonomy.
+
+    <b>Parent Taxon</b>
+
+    The top level taxon should share the same name as your taxonomy. This taxon will be the parent taxon for any other taxon in this taxonomy.
+
+    You can nest taxons as much as you want - for instance, if this taxonomy is "Clothing", you can have "Blue Jeans" with a parent taxon "Pants" with a parent taxon "Casual Apparel", with the final parent taxon being "Clothing".
+
+    <b>Ordering Taxons</b>
+
+    You can order the taxons from this page, moving their order of appearance within their parent taxon, or moving them to a new parent taxon entirely. 
+
+    <b>Adding Taxons</b>
+
+    You can click the "+" button on any of the taxons below to create a new taxon as a child taxon. You can also use the "Add Taxon" button on the top right to create a new taxon.
 taxons:
-  index: TODO display order
+  index: |+
+    This is the display order page.
+
+    Here you can specify what order you want your products to appear in for any given taxon.
+
+    To order your products, simply select a taxon in the dropdown menu, and then drag and drop your products in the order that you want them to appear in.
+  edit: |+
+    This is the taxons edit page.
+
+    From here you can specify what information you want to use for the taxon, for instance, what name or meta title you want to use. 
+
+    <b>Icon</b>
+
+    You can choose an icon for any taxon. This is not implemented in the default vanilla Solidus frontend.
 promotions:
   index: TODO
   new: TODO
