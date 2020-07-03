@@ -258,62 +258,336 @@ taxons:
 
     You can choose an icon for any taxon. This is not implemented in the default vanilla Solidus frontend.
 promotions:
-  index: TODO
-  new: TODO
-  edit: TODO
+  index: |+
+    This is the promotions index page.
+
+    You can see all of the existing promotions for your store, as well as edit or delete them. You can also create new ones by clicking the button on the top right of the page.
+
+    You can filter through the promotions by using the fields at the top of the page.
+  new: |+
+    This is the new promotions page.
+
+    Here you can create a new promotion. You'll need at minimum a name for the promotion, and a promotion code - alternatively, you can set the promotion to apply to all orders instead.
+
+    If you've selected multiple codes, you'll need to specify a base code, and how many codes in total you want. You can also specify if you want a joining character in between the promotion name and the random code, and how many times you want each code to be usable.
+  edit: |+
+    This is the promotion edit page.
+
+    Here you can control the details of the promotion. We'll seperate this guide into the 4 sections you see on the page - Promotion, Activation, Rules, and Actions.
+
+    <b>Promotion Control</b>
+
+    You can set the name, description, and promotion category here. You can also control some of the promotion logic, like:
+
+    Usage limit - you can set how many times the promotion can be used in total.
+
+    Usage limit per code - The same as above, except you can set how many times each code can be used - if you have multiple codes.
+
+    Start - The start date of the promotion
+
+    End - The end date of the promotion.
+
+    <b>Activation</b>
+
+    There are three activation types:
+
+    <i>All Orders</i>: This promotion will apply to all orders (that meet the rules specified below)
+
+    <i>Single Code</i>: This promotion can be activated by only one code
+
+    <i>Multiple Codes</i>: This promotion can be activated by a specified number of codes.
+
+    If you're using multiple codes, you can view a list of the codes by using the "View Codes List" button on the top right of the page.
+
+    <b>Rules</b>
+
+    You can specify the rules of a promotion here. This will be the rules that govern whether or not the promotion applies to the order - for instance, you can set a "First Order" rule, so that the promotion only applies if the order it's being applied to is the users first order.
+
+    You can find out more about promotion rules in the <a href="https://guides.solidus.io/users/promotions/promotion-rules.html">Solidus Guide</a>
+
+    <b>Actions</b>
+
+    The actions are what will happen if the code applies to the order. For instance, you can set an action of "Create Whole-Order Adjustment" that will take 5% off of the entire order amount.
+
+    You can find more information on promotion actions in the <a href="https://guides.solidus.io/users/promotions/promotion-actions.html">Solidus Guide</a>
+promotion_codes:
+ index: |+
+  This is the promotion code index page.
+
+  Here you can see all of the promotion codes for this particular promotion. You can create a new promotion code by clicking "New Promotion Code" on the top right of the page.
+promotion_code_batches:
+  index: |+
+    This is the promotion code batches index page.
+
+    Here you can see all of the promotion code batches for this promotion, as well as a download link for each batch. You can create a new promotion code batch by clicking the "New Promotion Code Batch" link on the top right of the page.
 promotion_categories:
-  index: TODO
-  new: TODO
+  index: |+
+    This is the promotion category index page. 
+
+    Promotion categories are useful for separating our your promotion - especially if you have a lot of promotions.
+  new: |+
+    This is the new promotion category page.
+
+    You can create a new promotion category from here.
+  edit: |+
+    This is the promotion category edit page. 
+
+    Here you can edit a promotion categories name or code.
 users:
-  index: TODO
-  new: TODO
-  edit: TODO
+  index: |+
+    This is the users index page.
+
+    Here you can see a list of users on your store, as well as what roles they have, and some useful statistics like # of orders.
+
+    You can filter this list by using the fields at the top of the page, or create a new user using the "New User" button at the top right.
+  new: |+
+    This is the new user page.
+
+    You can create a new user from this page. At minimum, you'll need an email address and a password for this user. You can also set what roles you want the user to have.
+
+    Be careful with roles - you don't want the wrong user to have admin access.
+  edit: |+
+    This is the user edit page. 
+
+    Here you can edit various details about the user, and change their password if necessary. You can also set what roles are available to the user. Be careful with this - you don't want the wrong user to have admin access.
+
+    The API access section allows you to view, change or clear the users API key.
+
+    You can create a user using this users account using the "Create order for this user" button on the top right of the page.
+
+    You can view various other pieces of information about the user using the tabs above.
+  addresses: |+
+    This is the users address page. 
+
+    Here you can see or change the users default address.
+  orders: |+
+    This is the users orders page.
+
+    Here you can view orders that this user has placed. Keep in mind that orders placed as a guest user will not show up here, even if the same email address was used.
+  items: |+
+    This is the users items page.
+
+    Here you can see a breakdown of what items this user has purchased in the past.
+store_credits:
+  index: |+
+    This is the users store credit page.
+
+    Here you can see the store credit available for the user, or give the user more store credit using the "Add Store Credit" button on the top right of the page.
+  new: |+
+    This is the new store credit page.
+
+    Here you can create a new store credit for the user. You can specify an amount, a credit type, and a memo.
+  edit: |+
+    This is the store credit edit page.
+
+    Here you can edit a users store credit. You can change the amount or invalidate the credit using the buttons on the top right of the page.
 stores:
-  edit: TODO
-  new: TODO
+  index: |+
+    This is the stores index page.
+
+    Here you can see a list of stores for your Solidus installation. 
+  edit: |+
+    This is the stores edit page. Here you can change details about your store, like it's name, default currency, or available locales. 
+
+    You can find more information about the options in the <a href="https://guides.solidus.io/users/settings/stores.html">Solidus Guides</a>.
+  new: This is the new store page. Here you can create a new store. 
+
+    You can find more information about the options in the <a href="https://guides.solidus.io/users/settings/stores.html">Solidus Guides</a>.
 payment_methods:
-  edit: TODO
-  index: TODO
-  new: TODO
+  edit: |+
+    This is the payment method edit page.
+
+    Here you can adjust details about the payment method, such as it's name, type, whether it's available to users or admin, and what stores it applies to.
+  index: |+
+    This is the payment methods index page.
+
+    Here you can see a list of payment methods that you have set up.
+
+    You can edit or delete existing payment methods, or change their order - which will change the order that they appear in for the customer or admin users.
+
+    You can also create a new payment method using the "New Payment Method" button on the top right of the page.
+  new: |+
+    This is the new payment method page. 
+
+    Here you can create a new payment method. At minimum you'll need to select a type and a name for the payment method.
 tax_categories:
-  index: TODO
-  edit: TODO
-  new: TODO
+  index: |+
+    This is the tax categories index page. 
+
+    Tax categories are useful if you have different items that are charged at different tax rates.
+
+    You can see your existing tax categories below, edit and delete them, or create new ones.
+
+    See the <a href="https://guides.solidus.io/users/settings/taxes.html">Taxes page of the Solidus Guides</a> for more information.
+  edit: |+
+    This is the tax category edit page.
+
+    Here you can edit different aspects of the tax category.
+
+    See the <a href="https://guides.solidus.io/users/settings/taxes.html">Taxes page of the Solidus Guides</a> for more information.
+  new: |+
+    This is the new tax category page. 
+
+    Here you can create a new tax category.
+
+    See the <a href="https://guides.solidus.io/users/settings/taxes.html">Taxes page of the Solidus Guides</a> for more information.
 tax_rates:
-  index: TODO
-  edit: TODO
-  new: TODO
+  index: |+
+    This is the tax rates index page. 
+
+    Here you can see the different tax rates available, edit or delete them, or create new tax rates.
+
+    See the <a href="https://guides.solidus.io/users/settings/taxes.html">Taxes page of the Solidus Guides</a> for more information.
+  edit: |+
+    This is the tax rates edit page.
+
+    Here you can edit a tax rate.
+
+    See the <a href="https://guides.solidus.io/users/settings/taxes.html">Taxes page of the Solidus Guides</a> for more information.
+  new: |+
+    This is the new tax rate page.
+
+    Here you can create a new tax rate.
+
+    See the <a href="https://guides.solidus.io/users/settings/taxes.html">Taxes page of the Solidus Guides</a> for more information.
 refund_reasons:
-  index: TODO
-  new: TODO
+  index: |+
+    This is the refund reason index page.
+
+    Here you can view your refund reasons, as well as edit, delete, or create new refund reasons.
+
+    Refund reasons are useful to specify why a refund was created.
+  new: |+
+    This is the new refund reason page.
+
+    Here you can create a new refund reason. You'll need to set a name, code, and whether or not it is active.
+  edit: |+
+    This is the refund reasons edit page.
+
+    Here you can edit a refund reason, changing its name, code, or active status.
 reimbursement_types:
-  index: TODO
+  index: |+
+    This is the reimbursement type index page.
+
+    Here you can view your reimbursement types. By default, you can't edit, delete, or create refund reasons - you'll need to talk to your tech department for this!
 rma_reasons:
-  index: TODO
-  edit: TODO
-  new: TODO
+  index: |+
+    This is the RMA reason index page.
+
+    Here you can view your RMA reasons, as well as edit, delete, or create new RMA reasons.
+
+    RMA reasons are useful to specify why an RMA was created.
+  new: |+
+    This is the new RMA reason page.
+
+    Here you can create a new RMA reason. You'll need to set a name and whether or not it is active.
+  edit: |+
+    This is the RMA reasons edit page.
+
+    Here you can edit an RMA reason, changing its name or active status.
 adjustment_reasons:
-  index: TODO
-  edit: TODO
-  new: TODO
+  index: |+
+    This is the adjustment reason index page.
+
+    Here you can view your adjustment reasons, as well as edit, delete, or create new adjustment reasons.
+
+    adjustment reasons are useful to specify why an adjustment was created.
+  new: |+
+    This is the new adjustment reason page.
+
+    Here you can create a new adjustment reason. You'll need to set a name, code, and whether or not it is active.
+  edit: |+
+    This is the adjustment reasons edit page.
+
+    Here you can edit an adjustment reason, changing its name, code, or active status.
 store_credit_reasons:
-  index: TODO
-  edit: TODO
-  new: TODO
+  index: |+
+    This is the store credit reason index page.
+
+    Here you can view your store credit reasons, as well as edit, delete, or create new store credit reasons.
+
+    store credit reasons are useful to specify why a store credit was created.
+  new: |+
+    This is the new store credit reason page.
+
+    Here you can create a new store credit reason. You'll need to set a name and whether or not it is active.
+  edit: |+
+    This is the store credit reasons edit page.
+
+    Here you can edit a store credit reason, changing its name or active status.
 shipping_methods:
-  index: TODO
-  edit: TODO
-  new: TODO
+  index: |+
+    This is the shipping method index page.
+
+    Here you can view your shipping methods, as well as edit, delete or create new shipping methods. 
+
+    For more information on shipping, check out the <a href="https://guides.solidus.io/users/settings/shipping.html">Solidus Guide</a>
+  edit: |+
+    This is the shipping method edit page.
+
+    Here you can edit a shipping method.
+
+    For more information on shipping, check out the <a href="https://guides.solidus.io/users/settings/shipping.html">Solidus Guide</a>
+  new: |+
+    This is the new shipping method page. 
+
+    Here you can create a new shipping method. 
+
+    For more information on shipping, check out the <a href="https://guides.solidus.io/users/settings/shipping.html">Solidus Guide</a>
 stock_movements:
-  index: TODO - a rather obscure page but one we should index anyway! /admin/stock_locations/1/stock_movements
+  index: |+
+    This is the stock movements index page.
+
+    Here you can see the stock movements for the selected stock location. You can also view the originator - where the stock movement came from.
 shipping_categories:
-  index: TODO
-  edit: TODO
-  new: TODO
+  index: |+
+    This is the shipping category index page.
+
+    Here you can view existing shipping categories, as well as edit, delete, or create new shipping categories.
+
+    For more information on shipping, check out the <a href="https://guides.solidus.io/users/settings/shipping.html">Solidus Guide</a>
+  edit: |+
+    This is the shipping category edit page.
+
+    Here you can edit the name of a shipping category.
+
+    For more information on shipping, check out the <a href="https://guides.solidus.io/users/settings/shipping.html">Solidus Guide</a>
+  new: |+
+    This is the new shipping category page.
+
+    Here you can create a new shipping category - you just need a name!
+
+    For more information on shipping, check out the <a href="https://guides.solidus.io/users/settings/shipping.html">Solidus Guide</a>
 stock_locations:
-  index: TODO
-  edit: TODO
-  new: TODO
+  index: |+
+    This is the stock location index page.
+
+    Here you can see existing stock locations, as well as edit, delete, or create new stock locations.
+
+    You can also see the stock movements for any stock location by clicking the "Stock Movements" page.
+
+    For more information on stock locations, check out the <a href="https://guides.solidus.io/users/settings/shipping.html">Solidus Guide</a>
+  edit: |+
+    This is the stock location edit page.
+
+    Here you can edit a stock location.
+
+    For more information on stock locations, check out the <a href="https://guides.solidus.io/users/settings/shipping.html">Solidus Guide</a>
+  new: |+
+    This is the new stock location page.
+
+    Here you can create a new stock location.
+
+    For more information on stock locations, check out the <a href="https://guides.solidus.io/users/settings/shipping.html">Solidus Guide</a>
+reimbursements:
+  edit: |+
+    This is the reimbursements page. 
+
+    Here you can create reimbursements for the customers payment.
+
+    You can adjust the reimbursement type to reimburse to a different payment method (or store credit)
+
+    You can also adjust the reimbursement amount, or set the reimbursement to exchange for another item instead.
 customer_details:
   edit: |+
     This is the orders customer details page.
@@ -391,10 +665,59 @@ refunds:
 
     To refund a payment, you'll need the amount you want to refund, and you'll also need to select a refund reason. To view and edit the list of refund reasons, you can go to Settings -> Refunds and Returns -> Refund Reasons.
 return_authorizations:
-  index: TODO return authorizations page #also need entries for new and edit
+  index: |+
+    This is the return authorizations index page.
+
+    Here you can see the return authorizations for the order. Return authorizations are shipped items in the order that have been authorized to be returned by the customer. When a customer wants to return an item, you'll create a return authorization here to indicate that you're expecting an item back from the customer.
+  new: |+
+    This is the new return authorizations page.
+
+    Here you can create a new return authorization. You have several options here to make the return run smoothly.
+
+    You have to check what shipped items that the customer wants to return.
+
+    <b>Return Authorization Options</b>
+
+    You can change the amount before sales tax to have a different amount refunded when the item is returned.
+
+    "Reimbursement Type" is the refund method that you want to use. In vanilla Solidus, you can refund the customers original payment method, or give them store credit.
+
+    "Exchange For" indicates that instead of refunding, you want to exchange this item for another item. For instance, you can return a "Large" shirt for a "Small" shirt instead. This will create a new shipment when the return is accepted.
+
+    "Reason" is the reason for this return, which is useful for record keeping. You can add new RMA reasons under "Settings -> Refunds and Returns".
+
+    "Stock Location" - this indicates to what stock location the inventory movements will be applied.
+
+    "Memo" like "Reason" is useful for record keeping.
+  edit: |+
+    This is the return authorization edit page.
+
+    Here you can edit already created return authorizations.
 customer_returns:
-  index: TODO CR index page
-  edit: TODO CR edit page
+  index: |+
+    This is the customer returns index page.
+
+    From here you can see the customer returns created for the order, and links to create a new customer return or edit existing ones.
+
+    If you have existing returns that have not yet been received, you can receive them by clicking the "Receive" button next to the customer return.
+
+    If you need to create a reimbursement for the return, there should be a "Create reimbursement" button that will take you through the process.
+
+    Lastly, if there are any issues with a customer return you've created, it will be displayed under "Acceptance errors" - you should fix these issues before proceeding.
+  new: |+
+    This is the new customer return page.
+
+    Here you can create a customer return. You can use "Other Items In Order" to select items to return, but it's better to use "Item's in RMA" - if there is nothing there, you'll need to create a new RMA on the RMA page.
+
+    <b>Customer Return Options</b>
+
+    "Resellable" indicates that the product should go back in stock when received.
+
+    "Reception Status" indicates the current status of the return - if it's been received, you can indicate such, and the inventory will be adjusted accordingly.
+
+    "Reason" is useful for record keeping.
+
+    "Stock Location" allows you to select the stock location that the inventory adjustments will take place on.
 cancellations:
   index: |+
     This is the order cancellation page.
