@@ -1,8 +1,8 @@
 <% guide_text = Rails.configuration.user_guides.dig controller_name, action_name %>
 
 <% if guide_text %>
-  <button type="button" class="btn btn-primary" id="panel-button" data-toggle="modal" data-target="#panelModal">
-    User Guide
+  <button type="button" class="btn btn-primary" id="panel-button" data-toggle="modal" data-target="#panelModal" title="User Guide">
+    <i class="fa fa-question-circle user-guide-icon"></i>
   </button>
 
   <div class="modal fade" id="panelModal" tabindex="-1" role="dialog" aria-labelledby="panelModalLabel" aria-hidden="true">
